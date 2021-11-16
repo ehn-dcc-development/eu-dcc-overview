@@ -14,18 +14,18 @@ In addition we gratefully host example implementations of various components of 
 
 [PIC to show the relationship]
 
-			-------------------
-			|                 |
-			| eHealth Network |  	
-			|				  | 	
-			-------------------         
-				   / \    
-				  /   \						
------------------ 		-----------------
-|               |       |               |
-| Member States |  		|      TSi      |
-|		        |       |               |
------------------		-----------------
+				-------------------
+				|                 |
+				| eHealth Network |  	
+				|				  | 	
+				-------------------         
+					   / \    
+					  /   \						
+	----------------- 		-----------------
+	|               |       |               |
+	| Member States |  		|      TSi      |
+	|		        |       |               |
+	-----------------		-----------------
 
 eHN defines, specifies, manages and provides sample implementations of the HCERT (the specification) and DCC (the EU implementation).
 Member states implement the specifications.
