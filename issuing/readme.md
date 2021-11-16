@@ -1,6 +1,5 @@
 # DCC Issuance Guide
 
-
 The EU DCC encodes a sequence of test and vaccination events into a single record. Depending on the sequence a DCC can be issued for:
 
 * Vaccination
@@ -98,7 +97,11 @@ The fields which are unique to PCR tests are:
 | `tr`  | Test result  | Value from the PCR TT valuset found on the gateway  |
 | `tc`  | Test center  | Actor who did the test, max 80 UTF-8 characters     |
 
-The follow are valid date/time formats: `YYYY-MM-DDThh:mm:ssZ`, `YYYY-MM-DDThh:mm:ss[+-]hh`, `YYYY-MM-DDThh:mm:ss[+-]hhmm`, `YYYY-MM-DDThh:mm:ss[+-]hh:mm`.
+The follow are valid date/time formats: 
+- `YYYY-MM-DDThh:mm:ssZ`
+- `YYYY-MM-DDThh:mm:ss[+-]hh`
+- `YYYY-MM-DDThh:mm:ss[+-]hhmm`
+- `YYYY-MM-DDThh:mm:ss[+-]hh:mm`
 
 ## Test (Rapid Antigen/RAT)
 
