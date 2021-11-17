@@ -1,66 +1,54 @@
 # eHealth Network: Digital Covid Certificates
 
-Welcome to the official home of the EU DCC (Digital Covid Certificate) on Github. Here you will find the specifications of the DCC system - HCERT, Schema, Valuesets and Business Rules.
+Welcome to the official home of the EU DCC (Digital Covid Certificate) on Github.
+Here you will find the specifications of the DCC system - HCERT, Schema, Valuesets and Business Rules.
 
-In addition we gratefully host example implementations of various components of the DCC. We aim to provide examples in a broad range of languages and platforms and welcome any contributions. Do you have something that you would like to contribute? Then read [TODO contributing.md] and get started today.
-
-
-
-
+In addition, we gratefully host example implementations of various components of the DCC.
+We aim to provide examples in a broad range of languages and platforms and welcome any contributions.
+Do you have something that you would like to contribute?
+Then read [TODO contributing.md] and get started today.
 
 **If you just want to see how the entire system in action on your own computer: check out [https://github.com/ehn-dcc-development/ehn-sign-verify-python-trivial](this repository).**
 
-# Organization
 
-[PIC to show the relationship]
+## Organization
 
-				-------------------
-				|                 |
-				| eHealth Network |  	
-				|				  | 	
-				-------------------         
-					   / \    
-					  /   \						
-	----------------- 		-----------------
-	|               |       |               |
-	| Member States |  		|      TSi      |
-	|		        |       |               |
-	-----------------		-----------------
+![Relation between ](img/eHN-organisation.svg)
 
 eHN defines, specifies, manages and provides sample implementations of the HCERT (the specification) and DCC (the EU implementation).
-Member states implement the specifications.
-TSi provide open source reference implementations of the DCC. In addition, they operate the EU trust gateway (DGCG) including onboarding services.
+Member States (from the European Economic Area, which encompasses more countries than the EU Member States) implement the specifications.
+TSi provide open source reference implementations of the DCC.
+In addition, they operate the EU trust Gateway (DGCG) including onboarding services.
 
-The sister organization EU Digital Green Certificates (https://github.com/eu-digital-green-certificates) - managed by TSi - houses the is the home of the official reference implementations of the DCC gateway, Holder and Verifier apps and assosiated tooling.
+The sister organization EU Digital Green Certificates (https://github.com/eu-digital-green-certificates) - managed by TSi - is the home of the official reference implementations of the DCC Gateway, Holder and Verifier apps, and associated tooling.
 
-A number of Member States have open sourced their implementations, including their singing services, Holder apps and Verifier apps. You can find an overview of them here.
+A number of Member States have open sourced their implementations, including their singing services, Holder apps and Verifier apps.
+You can find an overview of them here.
 
 
-
-
-# Specifications
+## Specifications
 
 [LINK to app spec repos]
-
 
 https://github.com/ehn-dcc-development/ehn-dcc-valuesets
 https://github.com/ehn-dcc-development/ehn-dcc-schema
 https://github.com/ehn-dcc-development/hcert-spec
 
 
-# Documentation
-
+## Documentation
 
 https://github.com/ehn-dcc-development/hcert-trust [RYAN: deprecated]
 
 
-# Implementations
+## Implementations
 
+[TODO]
 
 
 ## Full Stack
 
-These repositories contain implementations of the entire DCC stack, and are the perfect starting place for anyone who wants to understand how the DCC system works in detail. They can also be used during developement to validate your own implementation.
+These repositories contain implementations of the entire DCC stack, and are the perfect starting place for anyone who wants to understand how the DCC system works in detail.
+They can also be used during developement to validate your own implementation.
 
 The full stack consists of:
 
@@ -69,6 +57,7 @@ The full stack consists of:
 3. Validation by scanning QR (or processing HCERT), checking the signature and optionally checking the JSON payload against the schema.
 
 https://github.com/ehn-dcc-development/ehn-sign-verify-python-trivial
+
 
 ## HCERT
 
@@ -87,9 +76,9 @@ https://github.com/ehn-dcc-development/hcert-java
 
 [Explain]
 
-
 https://github.com/ehn-dcc-development/cose-js
 https://github.com/ehn-dcc-development/COSE-JAVA
+
 
 ## Base45
 
@@ -102,6 +91,7 @@ https://github.com/ehn-dcc-development/base45-swift
 https://github.com/ehn-dcc-development/base45-js
 https://github.com/ehn-dcc-development/base45-java
 
+
 ## Verifiers
 
 [Explain]
@@ -111,6 +101,7 @@ https://github.com/ehn-dcc-development/DGCValidator | Xamarin scanner app (Andro
 https://github.com/ehn-dcc-development/ValidationCore | Swift/Android scanner libraries
 
 https://github.com/ehn-dcc-development/hcert-app-kotlin
+
 
 ## Issuers
 
@@ -137,7 +128,7 @@ Simple MBED-TLS code for verifying an ECDSA signature as used in DCC's
 
 https://github.com/ehn-dcc-development/ehn-ecdsa-verify-mbed
 
-prot
+prot <!-- ??? -->
 
 https://github.com/ehn-dcc-development/ehn-dcc-vsu
 
