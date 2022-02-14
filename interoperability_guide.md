@@ -49,7 +49,7 @@ openssl genrsa > csca.private
 openssl rsa -in csca.private -pubout > csca.public
 ```
 
-3. Generate a Certificate Signing Request (see: [or use LetsEncrypt for testing this script](#optional-letsencrypt-tls-certificate))
+3. Generate a Certificate Signing Request (see: [or use LetsEncrypt for testing this script](#letsencrypt-tls-certificate))
 
 ```
 openssl req -new -sha256 -key csca.private -subj /CN=CSCA -set_serial 1 > csca.csr
@@ -74,6 +74,27 @@ csca.private
 csca.public
 csca.pem
 ```
+
+#### LetsEncrypt TLS certificate
+
+You can use LetsEncrypt to sign your CSCA certificate for the purpose of testing this script. It is not acceptable for the EU onboarding but is a low-cost way to run through this guide.
+
+LetsEncrypt generates TLS certificates for a domain. To use these certs you'll need:
+
+* Domain name under your control.
+* Ability to server files from an arbitary path on that domain.
+* OR the ability to control the DNS records (and time to wait for it to propigate)
+
+Generate your CSR using this command, replacing `subdomain.mydomain.tld` with your domain name (replacing step 3):
+
+```openssl req -new -sha256 -key csca.private -subj /CN=subdomain.mydomain.tld -set_serial 1 > csca.csr```
+
+Then follow the guide on this website, using your `csca.csr` in step 2 to generate the certificate:
+
+	https://gethttpsforfree.com/
+
+When saving the results, save the FIRST certificate (`-----BEGIN CERTIFICATE-----`) data into the file `csca.pem`  from step (4). The other certificates are the intermediates in the chain.
+
 ### Create a DSC
 
 Optional: create a DSC private key (handy when testing this script, in reality you already have this key - you're using it to sign your DIVOC or SHC)
@@ -93,26 +114,6 @@ Which can be verified with:
 	openssl x509 -in dsc.pem -text -noout 
 
 If everything has worked then you should see your issuer in the certificate data!
-
-#### Optional LetsEncrypt TLS certificate
-
-For testing purporses you can use LetsEncypt to sign your certificate in step 4. You can't use this with the EU Gateway in the EU environments but you can use it to run through this guide without spending money :-)
-
-LetsEncrypt generates TLS certificates, which work on domain names. You'll need:
-
-* Domain name under your control.
-* Ability to server files from an arbitary path on that domain.
-* OR the ability to control the DNS records (and time to wait for it to propigate)
-
-In this case, replace step 3 with this script, replacing `subdomain.mydomain.tld` with your own domain.
-
-```openssl req -new -sha256 -key csca.private -subj /CN=subdomain.mydomain.tld -set_serial 1 > csca.csr```
-
-Then follow the guide on this website, using your `csca.csr`  in step 2 to generate the certificate:
-
-	https://gethttpsforfree.com/
-
-When saving the results, save the FIRST certificate (`-----BEGIN CERTIFICATE-----`) data into the file `csca.pem`  from step (4). The other certificates are the intermediates in the chain.
 
 ## Thanks
 
