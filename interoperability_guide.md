@@ -1,9 +1,9 @@
 
 # How to use the same keys to issue DIVOC, SmartHealthCard and EU-DCC
 
-Both DIVOC and SmartHealthCard use a plain RSA or ECDSA keypair to sign themselves. The EU system also uses the same cryptographic keys however it requires that they be distributed using PKi.
+Both DIVOC and SmartHealthCard use a plain (i.e. there is no PKI or X.509 structure, just a raw public/private keypair) RSA or ECDSA keypair to sign the certificate. The EU system also uses the same cryptographic keys however it requires that they be distributed using PKi.
 
-This can cause a problem for countries who have already started working with DIVOC or SHC and who would like to work with the EU-DCC. It is possible to reuse the existing crypographic keys and their associated hardware security modules for the issuance of DCCs.
+The challenge here is to mesh these plain keys with the PKI based approach of the EU-DCC. This document sets out the process for this.
 
 ## EU Signing Certificate Structure
 
@@ -17,7 +17,7 @@ Here's a visualisation of the relationship between the two certificates:
 	|      |    issues     |       |
 	--------               ---------
 
-There are rules regarding the handling of these certificates. The `CSCA` must be air-gapped - it must never be used on a machine which is connected to a network or to the internet. Adequate procedures must be in place for the handling of the certificate - for example access should always be on a "four eyes" basis, physical access to the machine containing the private keys must be controled and there must be procedures in place. All of this is documented in the EU's security policy [TODO LINK].
+There are rules agreed by https://sogis.eu/ regarding the handling of certificates. These must be followed by all DCC Member States For example the `CSCA` must be air-gapped - it must never be used on a machine which is connected to a network or to the internet. Adequate procedures must be in place for the handling of the certificate - for example access should always be on a "four eyes" basis, physical access to the machine containing the private keys must be controled and there must be procedures in place. All of this is documented in the EU's security policy [TODO LINK].
 
 The `DSC` is the certificate that will be actually issuing the DCC. This must be stored on a secure but network connected system. In the ideal case it is stored on a Hardware Security Module (HSM). When that is not the case, the system it is stored on must be hardened. It goes without saying that the system must not be directly connected to the internet. All of the requirements are again documented in the EU's security policy [TODO LINK].
 
@@ -30,6 +30,8 @@ The basic approach is this: you need to turn your DIVOC/SHC keypair into a `DSC`
 This guide will help you first generate and procure a new `CSCA` certificate, either from your national Certificate Authority or from a reputable commercial Certificate Authority. Then it will show you how to use your shiny new `CSCA` certificate to issue your `DSC` based on *the existing keypair used for SHC/DIVOC*. Once this is done you can simply use the `CSCA` and `DSC` to onboard to the EU.
 
 ## How-to Guide
+
+This guide assumes that you have your private RSA or ECDSA key that is used to sign DIVOC saved as `dsc.private` and the public key used for checking as `dsc.public`.
 
 ### Creating a CSCA certificate
 
