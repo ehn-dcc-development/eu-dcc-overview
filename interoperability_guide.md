@@ -1,0 +1,119 @@
+
+# How to use the same keys to issue DIVOC, SmartHealthCard and EU-DCC
+
+Both DIVOC and SmartHealthCard use a plain RSA or ECDSA keypair to sign themselves. The EU system also uses the same cryptographic keys however it requires that they be distributed using PKi.
+
+This can cause a problem for countries who have already started working with DIVOC or SHC and who would like to work with the EU-DCC. It is possible to reuse the existing crypographic keys and their associated hardware security modules for the issuance of DCCs.
+
+## EU Signing Certificate Structure
+
+In the DCC key policy a country has two x509 certificates: a Country Signing Certificate Authority (`CSCA`) and a Document Signing Certificate (`DSC`). The `CSCA` is a certificate which has been issued by a competent authority - for example a country's own CA or a respected commercial CA. The DSC is, in turn, issued by the `CSCA` certificate.
+
+Here's a visualisation of the relationship between the two certificates:
+
+	--------               ---------
+	|      |               |       |
+	| CSCA | ------------> |  DSC  |
+	|      |    issues     |       |
+	--------               ---------
+
+There are rules regarding the handling of these certificates. The `CSCA` must be air-gapped - it must never be used on a machine which is connected to a network or to the internet. Adequate procedures must be in place for the handling of the certificate - for example access should always be on a "four eyes" basis, physical access to the machine containing the private keys must be controled and there must be procedures in place. All of this is documented in the EU's security policy [TODO LINK].
+
+The `DSC` is the certificate that will be actually issuing the DCC. This must be stored on a secure but network connected system. In the ideal case it is stored on a Hardware Security Module (HSM). When that is not the case, the system it is stored on must be hardened. It goes without saying that the system must not be directly connected to the internet. All of the requirements are again documented in the EU's security policy [TODO LINK].
+
+## Approach
+
+So, you are issuing DIVOC / SHC and would like to use the same hardware, organisation and key to issue DCC? Luckily there is a way to do it.
+
+The basic approach is this: you need to turn your DIVOC/SHC keypair into a `DSC`. So that means that it must be turned into an x509 certificate issued by your `CSCA`, which has in turn been issued by a respectable Certificate Authority. Wow, that sounds complex! It is - and that is where this guide comes in to help :)
+
+This guide will help you first generate and procure a new `CSCA` certificate, either from your national Certificate Authority or from a reputable commercial Certificate Authority. Then it will show you how to use your shiny new `CSCA` certificate to issue your `DSC` based on *the existing keypair used for SHC/DIVOC*. Once this is done you can simply use the `CSCA` and `DSC` to onboard to the EU.
+
+## How-to Guide
+
+### Creating a CSCA certificate
+
+We'll use a file-based key for this guide - ideally you'll be using a HSM. If you are, then you'll need to refer to the HSM manual 
+
+1. Generate an RSA private key:
+
+```
+openssl genrsa > csca.private
+```
+
+2. Save the public key:
+
+```
+openssl rsa -in csca.private -pubout > csca.public
+```
+
+3. Generate a Certificate Signing Request (see: [or use LetsEncrypt for testing this script](#optional-letsencrypt-tls-certificate))
+
+```
+openssl req -new -sha256 -key csca.private -subj /CN=CSCA -set_serial 1 > csca.csr
+```
+
+4. Use that CSR to order a new signing certificate from your CA and save the result as:
+
+```
+csca.pem
+```
+
+5. Delete the signing request:
+
+```
+rm csca.csr
+```
+
+Now you have the following files:
+
+```
+csca.private
+csca.public
+csca.pem
+```
+### Create a DSC
+
+Optional: create a DSC private key (handy when testing this script, in reality you already have this key - you're using it to sign your DIVOC or SHC)
+
+	openssl genrsa > dsc.private
+
+Now you can create a singing request for the DSC:
+
+	openssl req -new -subj /CN=Worker -key dsc.private -set_serial 10001 -out dsc.csr
+
+And you can sign the request with tyour CSCA
+
+	openssl x509 -req -in dsc.csr -CAkey csca.private -CA csca.pem -CAcreateserial -out dsc.pem
+
+Which can be verified with:
+
+	openssl x509 -in dsc.pem -text -noout 
+
+If everything has worked then you should see your issuer in the certificate data!
+
+#### Optional LetsEncrypt TLS certificate
+
+For testing purporses you can use LetsEncypt to sign your certificate in step 4. You can't use this with the EU Gateway in the EU environments but you can use it to run through this guide without spending money :-)
+
+LetsEncrypt generates TLS certificates, which work on domain names. You'll need:
+
+* Domain name under your control.
+* Ability to server files from an arbitary path on that domain.
+* OR the ability to control the DNS records (and time to wait for it to propigate)
+
+In this case, replace step 3 with this script, replacing `subdomain.mydomain.tld` with your own domain.
+
+```openssl req -new -sha256 -key csca.private -subj /CN=subdomain.mydomain.tld -set_serial 1 > csca.csr```
+
+Then follow the guide on this website, using your `csca.csr`  in step 2 to generate the certificate:
+
+	https://gethttpsforfree.com/
+
+When saving the results, save the FIRST certificate (`-----BEGIN CERTIFICATE-----`) data into the file `csca.pem`  from step (4). The other certificates are the intermediates in the chain.
+
+## Thanks
+
+Thanks to Dirk-Willem van Gulik for his help invaluable help with validating this approach and with providing all of the openssl voodoo :-)
+
+
