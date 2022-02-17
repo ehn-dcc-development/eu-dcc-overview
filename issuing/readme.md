@@ -43,7 +43,7 @@ The version number is stored in `ver` and it represents the version of the schem
 
 	"ver": "1.3.0"
 
-The holder's name is stored in the element `nam`, `fn` contains the family name and `gn` contains the given name of the holder encoded in any UTF-8 alphabet character.
+The holder's names are stored in the element `nam`: `fn` contains the family name and `gn` contains the given name of the holder encoded in any UTF-8 alphabet character.
 The fields `fnt` and `gnt` contain the family name and given name respectively transliterated according to the [ICAO 9303 MRTD transliteration rules](https://www.icao.int/publications/Documents/9303_p3_cons_en.pdf).
 
 	"nam": {
@@ -114,7 +114,7 @@ The following are valid date/time formats:
 
 ## Test (Rapid Antigen/RAT)
 
-The test data is stored under the `t` element.
+The test data is stored as the first (and only) item under the `t` element.
 
 	"t": [
 		{
@@ -151,7 +151,7 @@ The use of other identifiers such as those provided directly by test manufacture
 
 ## Recovery
 
-The recovery data is stored under the `r` element.
+The recovery data is stored as the first (and only) item under the `r` element.
 
 	"r": [
 		{
@@ -170,8 +170,8 @@ The fields which are unique to recovery are:
 | Field | Name                           | Description                                   |
 | ----- | ------------------------------ | --------------------------------------------- |
 | `fr`  | Date of first positive result  | ISO-8601, `YYYY-MM-DD`                        |
-| `df`  | Date Valid From                | ISO-8601, `YYYY-MM-DD`, > 11 days afer `fr`   |
-| `du`  | Date Valid To                  | ISO-8601, `YYYY-MM-DD`, <= 180 days afer `fr` |
+| `df`  | Date Valid From                | ISO-8601, `YYYY-MM-DD`                        |
+| `du`  | Date Valid To                  | ISO-8601, `YYYY-MM-DD`                        |
 
 The recovery certificate can be issued for a person who has recovered from COVID-19, as proven by a positief NAAT/PCR test.
 To quote the legislation:
@@ -181,7 +181,7 @@ To quote the legislation:
 
 ## Vaccination
 
-The vaccination data is stored under the `v` element.
+The vaccination data is stored as the first (and only) item under the `v` element.
 	
 	"v": [
 		{
@@ -261,20 +261,24 @@ Booster vaccinations MUST be encoded as an additional dose in the sequence. For 
   		"ci": "URN:UVCI:01:NL:DADFCC47C7334E45A906DB12FD859FB7#1"
 	}
 
+A mini-app to see how the values of the `dn` and `sd` fields in the vaccination-part of a DCC should be computed according to recent EU Regulations:
+
+https://dcc-encoding.vercel.app/
+
 ### Wait times
 
 There is an issue regards wait time after last dose.
-Many countries consider a person "fully vaccinated" only 14 days after their last vaccination.
-For people who have received a booster dose, this will mean that there is a wait time before their booster DCC is accepted.
+Many countries consider a person "fully vaccinated" only 14 days after their last vaccination, regardless of whether that vaccination was part of their primary vaccination course.
+For people who have received a booster dose, this will mean that there might be a wait time before their booster DCC is accepted.
 
 There are several ways to handle this situation:
 
 * Issue multiple DCC, then the original complete vaccination can be used during the wait time.
 * Educate citizens so that they know about the wait time.
-<!-- SUGGESTIONS? -->
+* Get in contact with the business rules developers of the (intended) destination to check whether the wait time after a booster dose is intentional, and matching their official entry regulations.
 
 
 ## Further reading
 
-The official technical specifications for the EU-DCC schema is published [here](https://ec.europa.eu/health/sites/default/files/ehealth/docs/covid-certificate_json_specification_en.pdf). That document leading, the single point of truth. If you find any inconsistencies between that document and any other documentation in this repository then please create an issue in the repository. Then it will be fixed.
+The official technical specification for the EU-DCC schema is published [here](https://ec.europa.eu/health/sites/default/files/ehealth/docs/covid-certificate_json_specification_en.pdf). That document is leading: the single point of truth. If you find any inconsistencies between that document and any other documentation in this repository, then please create an issue in the repository. Then it will be fixed.
 
