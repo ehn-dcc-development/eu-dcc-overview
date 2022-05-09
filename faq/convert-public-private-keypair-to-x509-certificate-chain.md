@@ -1,4 +1,3 @@
-
 # How to use the same keys to issue DIVOC, SmartHealthCard and EU-DCC
 
 Both DIVOC and SmartHealthCard use a plain (i.e. there is no PKI or X.509 structure, just a raw public/private keypair) RSA or ECDSA keypair to sign the certificate. The EU system also uses the same cryptographic keys however it requires that they be distributed using PKi.

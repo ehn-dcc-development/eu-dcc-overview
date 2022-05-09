@@ -6,7 +6,6 @@ The EU DCC encodes a certificate that's issued for:
 * Recovery - after positive test, and confirmation by a health authority
 * Test result - after negative test at an officially-registered testing facility
 
-
 ## General structure
 
 The DCC is encoded as JSON.
@@ -177,7 +176,6 @@ The recovery certificate can be issued for a person who has recovered from COVID
 To quote the legislation:
 
 "A certificate confirming that, following a positive result of a NAAT test carried out by health professionals or by skilled testing personnel the holder has recovered from a SARS-CoV-2 infection (certificate of recovery)."
-
 
 ## Vaccination
 
