@@ -23,10 +23,10 @@ A number of Member States have open sourced their implementations, including the
 
 The DCC specifications have been split into four repositiros:
 
-* [hcert-spec](https://github.com/ehn-dcc-development/hcert-spec) specifies the container and encoding formats used by the DCC.
-* [ehn-dcc-valuesets](https://github.com/ehn-dcc-development/ehn-dcc-valuesets) provides the valueset datastructures and a snapshot of the valuesets (the current versions are published on the DCCG Gateway.
 * [ehn-dcc-schema](https://github.com/ehn-dcc-development/ehn-dcc-schema) specifies the DCC schema (the specification of the data stored within the DCC).
+* [ehn-dcc-valuesets](https://github.com/ehn-dcc-development/ehn-dcc-valuesets) provides the valueset datastructures and a snapshot of the valuesets (the current versions are published on the DCCG Gateway.
 * [dgc-business-rules](https://github.com/ehn-dcc-development/dgc-business-rules) specifies the Business Rules framework.
+* [hcert-spec](https://github.com/ehn-dcc-development/hcert-spec) specifies the container and encoding formats used by the DCC.
 
 You can find these repositories pinned on our github [homepage](https://github.com/ehn-dcc-development).
 
@@ -34,15 +34,15 @@ We have a team of maintainers who monitor the above mentioned pinned repositorie
 
 ## Maintainers
 
-The core repoisotires are maintained a small group of people attached to EU Member States or the European Commission. 
+The core repositories are maintained a small group of people attached to EU Member States or the European Commission. 
 
 Repository          | Teams
 ------------------- | ------------
-hcert-spec          | [hcert-spec-editors](https://github.com/orgs/ehn-dcc-development/teams/hcert-spec-editors)
-ehn-dcc-valuesets   | [ehn-valueset-editors](https://github.com/orgs/ehn-dcc-development/teams/ehn-valueset-editors)
-ehn-dcc-schema      | [ehn-schema-editors](https://github.com/orgs/ehn-dcc-development/teams/ehn-schema-editors)
-dgc-business-rules  | [ehn-business-rules-editors](https://github.com/orgs/ehn-dcc-development/teams/ehn-business-rules-editors)
 overview            | [overview-editors](https://github.com/orgs/ehn-dcc-development/teams/overview-editors)
+ehn-dcc-schema      | [ehn-schema-editors](https://github.com/orgs/ehn-dcc-development/teams/ehn-schema-editors)
+ehn-dcc-valuesets   | [ehn-valueset-editors](https://github.com/orgs/ehn-dcc-development/teams/ehn-valueset-editors)
+dgc-business-rules  | [ehn-business-rules-editors](https://github.com/orgs/ehn-dcc-development/teams/ehn-business-rules-editors)
+hcert-spec          | [hcert-spec-editors](https://github.com/orgs/ehn-dcc-development/teams/hcert-spec-editors)
 
 The remaining repositories have been donated by parties and are maintained by them. Feel free to raise issues on them, if you feel that they need the attention of the core team (for example you have found a bug) then you may also raise an issue on this repository (the overview).
 
@@ -107,13 +107,5 @@ Repository                                                                      
 Various implementors make use of the Javascript implementation [erdtman/cose-js](https://github.com/erdtman/cose-js) (forked [here](https://github.com/ehn-dcc-development/cose-js)) and the Java implementation [cose-wg/COSE-JAVA](https://github.com/cose-wg/COSE-JAVA) (forked [here](https://github.com/ehn-dcc-development/COSE-JAVA))
 
 # TODO
-
-Rename https://github.com/ehn-dcc-development/hcert-spec > ehn-dcc-hcert-spec
-
-Rename https://github.com/ehn-dcc-development/ehn-sign-verify-python-trivial to something clearer
-
-Rename https://github.com/ehn-dcc-development/hcert-app-kotlin > verifier-app-kotlin
-
-Rename https://github.com/ehn-dcc-development/dgc-business-rules > dcc-business-rules
 
 * Add Trustlist overview (document linking to trustlists from various states who publish)
