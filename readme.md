@@ -46,6 +46,12 @@ eu-dcc-hcert-spec      | [eu-dcc-hcert-spec-editors](https://github.com/orgs/ehn
 
 The remaining repositories have been donated by parties and are maintained by them. Feel free to raise issues on them, if you feel that they need the attention of the core team (for example you have found a bug) then you may also raise an issue on this repository (the overview).
 
+## Useful websites and tools
+
+* [DCC Issuer website](https://dgc.a-sit.at/ehn/) created by the Austrian team which let you generate a DCC using an example signing key (or you can provide your own).
+* [DCC Verifier website](https://eu-dcc-verifier.web.app/home) created by a member of our team where you can scan a DCC, verify it and view the contents. Verification supports both Production and Acceptance environments.
+* [DCC Validation website](https://eu-dcc-validation.web.app/) created by a member of our team where you can view all of the [QA DCC](https://github.com/eu-digital-green-certificates/dcc-quality-assurance) and are supported in a validation process.
+
 ## Documentation, guides, FAQs and How-Tos
 
 There is a large amount of documentation and knowledge of the DCC but it can be hard to find. We maintain an overview of important documentation here to help with this.
