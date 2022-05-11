@@ -4,7 +4,7 @@ Welcome to the official home of the EU DCC (Digital Covid Certificate) on Github
 
 In addition, we gratefully host example implementations of various components of the DCC. We aim to provide examples in a broad range of languages and platforms and welcome any contributions. Do you have something that you would like to contribute? Then read [contributing.md](contributing.md) and get started today.
 
-**If you just want to see how the entire system in action on your own computer: check out (this repository)[https://github.com/ehn-dcc-development/ehn-sign-verify-python-trivial].**
+**If you just want to see how the entire system in action on your own computer: check out [this repository]([https://github.com/ehn-dcc-development/ehn-sign-verify-python-trivial).**
 
 ## Organization
 
@@ -23,10 +23,10 @@ A number of Member States have open sourced their implementations, including the
 
 The DCC specifications have been split into four repositiros:
 
-* [ehn-dcc-schema](https://github.com/ehn-dcc-development/ehn-dcc-schema) specifies the DCC schema (the specification of the data stored within the DCC).
-* [ehn-dcc-valuesets](https://github.com/ehn-dcc-development/ehn-dcc-valuesets) provides the valueset datastructures and a snapshot of the valuesets (the current versions are published on the DCCG Gateway.
-* [dgc-business-rules](https://github.com/ehn-dcc-development/dgc-business-rules) specifies the Business Rules framework.
-* [hcert-spec](https://github.com/ehn-dcc-development/hcert-spec) specifies the container and encoding formats used by the DCC.
+* [eu-dcc-schema](https://github.com/ehn-dcc-development/eu-dcc-schema) specifies the DCC schema (the specification of the data stored within the DCC).
+* [eu-dcc-valuesets](https://github.com/ehn-dcc-development/eu-dcc-valuesets) provides the valueset datastructures and a snapshot of the valuesets (the current versions are published on the DCCG Gateway.
+* [eu-dcc-business-rules](https://github.com/ehn-dcc-development/eu-dcc-business-rules) specifies the Business Rules framework.
+* [eu-dcc-hcert-spec](https://github.com/ehn-dcc-development/eu-dcc-hcert-spec) specifies the container and encoding formats used by the DCC.
 
 You can find these repositories pinned on our github [homepage](https://github.com/ehn-dcc-development).
 
@@ -38,13 +38,19 @@ The core repositories are maintained a small group of people attached to EU Memb
 
 Repository          | Teams
 ------------------- | ------------
-overview            | [overview-editors](https://github.com/orgs/ehn-dcc-development/teams/overview-editors)
-ehn-dcc-schema      | [ehn-schema-editors](https://github.com/orgs/ehn-dcc-development/teams/ehn-schema-editors)
-ehn-dcc-valuesets   | [ehn-valueset-editors](https://github.com/orgs/ehn-dcc-development/teams/ehn-valueset-editors)
-dgc-business-rules  | [ehn-business-rules-editors](https://github.com/orgs/ehn-dcc-development/teams/ehn-business-rules-editors)
-hcert-spec          | [hcert-spec-editors](https://github.com/orgs/ehn-dcc-development/teams/hcert-spec-editors)
+eu-dcc-overview        | [eu-dcc-overview-editors](https://github.com/orgs/ehn-dcc-development/teams/eu-dcc-overview-editors)
+eu-dcc-schema          | [eu-dcc-schema-editors](https://github.com/orgs/ehn-dcc-development/teams/eu-dcc-schema-editors)
+eu-dcc-valuesets       | [eu-dcc-valueset-editors](https://github.com/orgs/ehn-dcc-development/teams/eu-dcc-valueset-editors)
+eu-dcc-business-rules  | [eu-dcc-business-rules-editors](https://github.com/orgs/ehn-dcc-development/teams/eu-dcc-business-rules-editors)
+eu-dcc-hcert-spec      | [eu-dcc-hcert-spec-editors](https://github.com/orgs/ehn-dcc-development/teams/eu-dcc-hcert-spec-editors)
 
 The remaining repositories have been donated by parties and are maintained by them. Feel free to raise issues on them, if you feel that they need the attention of the core team (for example you have found a bug) then you may also raise an issue on this repository (the overview).
+
+## Useful websites and tools
+
+* [DCC Issuer website](https://dgc.a-sit.at/ehn/) created by the Austrian team which let you generate a DCC using an example signing key (or you can provide your own).
+* [DCC Verifier website](https://eu-dcc-verifier.web.app/home) created by a member of our team where you can scan a DCC, verify it and view the contents. Verification supports both Production and Acceptance environments.
+* [DCC Validation website](https://eu-dcc-validation.web.app/) created by a member of our team where you can view all of the [QA DCC](https://github.com/eu-digital-green-certificates/dcc-quality-assurance) and are supported in a validation process.
 
 ## Documentation, guides, FAQs and How-Tos
 
@@ -75,27 +81,27 @@ If you're getting started or just want to under how the DCC fits together then c
 
 Here's an overview of most of the repositories under the organisation. Please refer to the repositories themselves for information on licenses, contribution policies etc.
 
-Repository                                                                          | Description
----------                                                                           | -----------------
-[base45-ansi-c](https://github.com/ehn-dcc-development/base45-ansi-C)               | base45 encoder/decoder in C
-[base45-cs](https://github.com/ehn-dcc-development/base45-cs)                       | base45 encoder/decoder in C#
-[base45-java](https://github.com/ehn-dcc-development/base45-java)                   | base45 encoder/decoder in Java
-[base45-js](https://github.com/ehn-dcc-development/base45-js)                       | base45 encoder/decoder in Javascript
-[base45-php](https://github.com/ehn-dcc-development/base45-php)                     | base45 encoder/decoder in PHP
-[base45-swift](https://github.com/ehn-dcc-development/base45-swift)                 | base45 encoder/decoder in Swift
-[DccCachingService](https://github.com/ehn-dcc-development/DccCachingService)       | Caches trustlist, business rules, valuesets on the device built in Swift (iOS)
-[DGCValidator](https://github.com/ehn-dcc-development/DGCValidator)                 | Cross-platform verifier app build in Xamarin
-[hcert-app-swift](https://github.com/ehn-dcc-development/hcert-app-swift)           | HCERT validation app in Swift (iOS)
-[hcert-app-kotlin](https://github.com/ehn-dcc-development/hcert-app-kotlin)         | HCERT validation app in Kotlin (Android)
-[hcert-dotnet](https://github.com/ehn-dcc-development/hcert-dotnet)                 | HCERT validation and creation in C# (Xamarin/server)
-[hcert-java](https://github.com/ehn-dcc-development/hcert-java)                     | HCERT validation and creation in Java (Android/server)
-[hcert-kotlin](https://github.com/ehn-dcc-development/hcert-kotlin)                 | HCERT validation and creation in Kotlin (Android)
-[hcert-service-kotlin](https://github.com/ehn-dcc-development/hcert-service-kotlin) | HCERT creation service (server) , deployed [here](https://dgc.a-sit.at/ehn/)
-[icao-ml-Tools](https://github.com/ehn-dcc-development/icao-ml-tools) | Scripts to download, parse and cross-reference public ICAO master lists
-[python-hcert](https://github.com/ehn-dcc-development/python-hcert)                 | HCERT validation and creation in Python (server)
-[ValidationCore](https://github.com/ehn-dcc-development/ValidationCore)             | Validation libraries for both iOS and Android
-[x509-resign](https://github.com/ehn-dcc-development/x509-resign)                   | Tool to resign x509 cert
-[ehn-dcc-vsu](https://github.com/ehn-dcc-development/ehn-dcc-vsu)                   | Prototype client-server to demonstrate how clients can update to the latest Digital COVID Certificate (DCC) value sets
+Repository                                                                            | Description
+---------                                                                             | -----------------
+[base45-ansi-c](https://github.com/ehn-dcc-development/base45-ansi-C)                 | base45 encoder/decoder in C
+[base45-cs](https://github.com/ehn-dcc-development/base45-cs)                         | base45 encoder/decoder in C#
+[base45-java](https://github.com/ehn-dcc-development/base45-java)                     | base45 encoder/decoder in Java
+[base45-js](https://github.com/ehn-dcc-development/base45-js)                         | base45 encoder/decoder in Javascript
+[base45-php](https://github.com/ehn-dcc-development/base45-php)                       | base45 encoder/decoder in PHP
+[base45-swift](https://github.com/ehn-dcc-development/base45-swift)                   | base45 encoder/decoder in Swift
+[DccCachingService](https://github.com/ehn-dcc-development/DccCachingService)         | Caches trustlist, business rules, valuesets on the device built in Swift (iOS)
+[DGCValidator](https://github.com/ehn-dcc-development/DGCValidator)                   | Cross-platform verifier app build in Xamarin
+[hcert-app-swift](https://github.com/ehn-dcc-development/hcert-app-swift)             | HCERT validation app in Swift (iOS)
+[hcert-app-kotlin](https://github.com/ehn-dcc-development/hcert-app-kotlin)           | HCERT validation app in Kotlin (Android)
+[hcert-dotnet](https://github.com/ehn-dcc-development/hcert-dotnet)                   | HCERT validation and creation in C# (Xamarin/server)
+[hcert-java](https://github.com/ehn-dcc-development/hcert-java)                       | HCERT validation and creation in Java (Android/server)
+[hcert-kotlin](https://github.com/ehn-dcc-development/hcert-kotlin)                   | HCERT validation and creation in Kotlin (Android)
+[hcert-service-kotlin](https://github.com/ehn-dcc-development/hcert-service-kotlin)   | HCERT creation service (server) , deployed [here](https://dgc.a-sit.at/ehn/)
+[icao-ml-Tools](https://github.com/ehn-dcc-development/icao-ml-tools)                 | Scripts to download, parse and cross-reference public ICAO master lists
+[python-hcert](https://github.com/ehn-dcc-development/python-hcert)                   | HCERT validation and creation in Python (server)
+[ValidationCore](https://github.com/ehn-dcc-development/ValidationCore)               | Validation libraries for both iOS and Android
+[x509-resign](https://github.com/ehn-dcc-development/x509-resign)                     | Tool to resign x509 cert
+[ehn-dcc-vsu](https://github.com/ehn-dcc-development/ehn-dcc-vsu)                     | Prototype client-server to demonstrate how clients can update to the latest Digital COVID Certificate (DCC) value sets
 [ehn-ecdsa-verify-mbed](https://github.com/ehn-dcc-development/ehn-ecdsa-verify-mbed) | Simple MBED-TLS code for verifying an ECDSA signature as used in DCCs
 
 ## Useful third-party libraries
