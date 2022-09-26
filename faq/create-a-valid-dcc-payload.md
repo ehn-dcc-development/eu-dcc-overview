@@ -275,6 +275,25 @@ There are several ways to handle this situation:
 * Educate citizens so that they know about the wait time.
 * Get in contact with the business rules developers of the (intended) destination to check whether the wait time after a booster dose is intentional, and matching their official entry regulations.
 
+### Encoding of Bivalent Vaccines.
+
+In late 2022 a number of bivalent vaccination subtypes have come on to the market. A number of these vaccines have received market approval for use within the EU. The approval is an extention of the existing market approval as opposed to a completely new approval.
+
+Base on the feedback received from the Health Security Committee the European Commission has decided that the bivalent vaccinations will be encoded within the DCC using the existing encoding of their supertype.
+
+That means, for example, that if a person receives, as his or her second booster following a two-dose primary series, a dose of Comirnaty bivalent Original/Omicron BA.4/5, he or she should receive an EU Digital COVID Certificate stating that he or she has received a dose of Comirnaty using the existing code (EU/1/20/1528) and indicating “4/4” as the number of doses received.
+
+Here is a full list of the (at time of writing) approved bivalent vaccinations and their encoding:
+
+Vaccination name 							| Encoding
+--------------------------------------------|-------------
+Comirnaty bivalent Original/Omicron BA.1    | EU/1/20/1528
+Comirnaty bivalent Original/Omicron BA.4/5  | EU/1/20/1528
+Spikevax bivalent Original/Omicron BA.1     | EU/1/20/1507
+
+(NOTE: if you are deploying a new bivalent vaccination not currently included on this list please feel free to create an issue in github and/or contact the maintainers of this repository and we will clarify the encoding).
+
+In collaboration with the Health Security Committee, we will continue monitoring scientific evidence related to the use of these vaccines.
 
 ## Further reading
 
