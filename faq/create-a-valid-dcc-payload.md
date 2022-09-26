@@ -277,11 +277,11 @@ There are several ways to handle this situation:
 
 ### Encoding of Bivalent Vaccines.
 
-In late 2022 a number of bivalent vaccination subtypes have come on to the market. A number of these vaccines have received market approval for use within the EU. The approval is an extention of the existing market approval as opposed to a completely new approval.
+In late 2022 a number of bivalent vaccination subtypes have come on to the market. A number of these vaccines have received market approval for use within the EU. The approval is an extension of the existing market approval as opposed to a completely new approval.
 
-Base on the feedback received from the Health Security Committee the European Commission has decided that the bivalent vaccinations will be encoded within the DCC using the existing encoding of their supertype.
+Based on the feedback received from the Health Security Committee the European Commission has decided that the bivalent vaccinations will be encoded within the DCC using the existing encoding of their supertype.
 
-That means, for example, that if a person receives, as his or her second booster following a two-dose primary series, a dose of Comirnaty bivalent Original/Omicron BA.4/5, he or she should receive an EU Digital COVID Certificate stating that he or she has received a dose of Comirnaty using the existing code (EU/1/20/1528) and indicating “4/4” as the number of doses received.
+That means, for example, that if a person receives, as their second booster following a two-dose primary series, a dose of Comirnaty bivalent Original/Omicron BA.4/5, they should receive an EU Digital COVID Certificate stating that they have received a dose of Comirnaty using the existing code (EU/1/20/1528) and indicating “4/4” as the number of doses received.
 
 Here is a full list of the (at time of writing) approved bivalent vaccinations and their encoding:
 
