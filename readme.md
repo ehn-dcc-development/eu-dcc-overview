@@ -63,6 +63,7 @@ Document | Description
 [EC eHealth and COVID-19](https://ec.europa.eu/health/ehealth-digital-health-and-care/ehealth-and-covid-19_en) | Homepage of EU-DCC at the EC, here you'll find all of the officially published technical documentation as well as the various forms and procedures required for onboaring of non-EU countries (referred to as "Third Countries" in EC parlance)
 [Implementing decisions](https://ec.europa.eu/info/publications/commission-implementing-decisions-eu-equivalence-covid-19-certificates-issued-non-eu-countries_en) | Implementing decisions between the EU and Third Countries are published here.
 [Key documents](https://ec.europa.eu/info/publications/key-documents-related-digital-covid-19-certificate_en) | Key legal documents, ammendments etc
+[Revocation B2B](docs/revocation-b2b.pdf) | Documentation of the revocation B2B API from the gateway
 
 In the [FAQ](/faq) folder you can find answers to a number of common questions as well as a selection of detailed guides and "how tos" written and maintained by the core team.
 
