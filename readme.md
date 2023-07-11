@@ -1,5 +1,11 @@
 # eHealth Network: Digital Covid Certificates
 
+## IMPORTANT NOTICE
+
+As of July 1st 2023 the EU-DCC project has been handed over to the WHO. The project has therefore been frozen. This repository will be placed into archival mode and will remain available for the foreseeable future however it will no longer be actively maintained.
+
+## Introduction
+
 Welcome to the official home of the EU DCC (Digital Covid Certificate) on Github. Here you will find the specifications of the DCC system - HCERT, Schema, Value sets, and Business Rules.
 
 In addition, we gratefully host example implementations of various components of the DCC. We aim to provide examples in a broad range of languages and platforms and welcome any contributions. Do you have something that you would like to contribute? Then read [contributing.md](contributing.md) and get started today.
